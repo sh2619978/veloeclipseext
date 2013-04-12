@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+            name="Sample Preferences"
+            class="veloeclipseext.preferences.SamplePreferencePage"
+            id="veloeclipseext.preferences.SamplePreferencePage">
+      </page>
+   </extension>
+   <extension
+         point="org.eclipse.core.runtime.preferences">
+      <initializer
+            class="veloeclipseext.preferences.PreferenceInitializer">
+      </initializer>
+   </extension>
+   <extension 
+       point="com.googlecode.veloeclipse.ui.completionproviders">
+       <provider 
+           id="veloeclipseext.editor.completion.SpringMvcCompletionProvider" 
+           class="veloeclipseext.editor.completion.SpringMvcCompletionProvider">
+       </provider>
+   </extension>
+
+</plugin>
