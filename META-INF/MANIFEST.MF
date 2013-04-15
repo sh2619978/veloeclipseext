@@ -8,7 +8,10 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
  com.googlecode.veloeclipse.ui;bundle-version="2.0.8",
  org.eclipse.core.resources;bundle-version="3.7.100",
- org.eclipse.jface.text;bundle-version="3.7.1"
+ org.eclipse.jface.text;bundle-version="3.7.1",
+ org.eclipse.jdt.core;bundle-version="3.7.1",
+ org.springframework.web;bundle-version="3.1.0",
+ org.springframework.web.servlet;bundle-version="3.1.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ActivationPolicy: lazy
 Bundle-ClassPath: veloeclipseext.jar

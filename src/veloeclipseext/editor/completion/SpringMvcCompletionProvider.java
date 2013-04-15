@@ -9,9 +9,15 @@ import java.util.Map;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.runtime.CoreException;
+import org.eclipse.jdt.core.IJavaProject;
+import org.eclipse.jdt.core.search.IJavaSearchConstants;
+import org.eclipse.jdt.core.search.SearchEngine;
+import org.eclipse.jdt.core.search.SearchPattern;
 import org.eclipse.jface.text.IDocument;
 import org.eclipse.jface.text.contentassist.CompletionProposal;
 import org.eclipse.jface.text.contentassist.ICompletionProposal;
+
+import veloeclipseext.jdt.JdtManager;
 
 import com.googlecode.veloeclipse.editor.VelocityEditor;
 import com.googlecode.veloeclipse.editor.completion.ICompletionProvider;
@@ -56,6 +62,12 @@ public class SpringMvcCompletionProvider implements ICompletionProvider {
         ITreeNode rootNode = editor.getRootNode();
         ITreeNode lastRootNode = editor.getLastRootNode();
         Object[] rootElements = editor.getRootElements();
+        
+        JdtManager jdtManager = new JdtManager();
+        IJavaProject firstJavaProject = jdtManager.getFirstJavaProject();
+        
+        SearchPattern pattern = SearchPattern.createPattern("java.lang.Object()", IJavaSearchConstants.METHOD, IJavaSearchConstants.QUALIFIED_REFERENCE, SearchPattern.R_PATTERN_MATCH);
+        SearchEngine engine = new SearchEngine();
         
         
         List<ICompletionProposal> proposals = new ArrayList<ICompletionProposal>();
